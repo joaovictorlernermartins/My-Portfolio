@@ -13,13 +13,13 @@ export default function AboutMe(props) {
         bgcolor: "black",
         borderRadius: 5,
         color: "white",
-        justifyContent: "space-between",
-        padding: "20px 40px 20px 30px",
-        marginTop: "10px",
-        gap: "10px",
+        padding: "20px 20px 20px 20px",
+        gap: "20px",
+        flexWrap: "wrap",
+        justifyContent: "center",
       }}
     >
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box sx={{ display: "flex", maxWidth: "450px", flexDirection: "column" }}>
         <Typography variant="h4"><b>About Me</b></Typography>
         <Typography sx={{ marginTop: "8px" }} variant="h6">
           Hello!

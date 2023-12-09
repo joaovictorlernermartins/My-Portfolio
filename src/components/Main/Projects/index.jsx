@@ -5,60 +5,87 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import Chip from '@mui/material/Chip';
+
 
 
 export default function Projects(props) {
 
-  const projects = [{
-    image: "https://github.com/dkt0001/my-top-animelist-html/raw/main/Captura%20de%20tela%202023-10-19%20014402.png?raw=true",
-    title: "The Best Animes in My Opinion",
-    name: "The Best Animes in My Opiniont",
-    text: "A simple html file with my top 5 favourites animes",
-  },
-  {
-    image: "https://private-user-images.githubusercontent.com/81587343/284774887-5d5b7f73-ee0b-489d-b700-875a380d1b12.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDE4OTM2MjAsIm5iZiI6MTcwMTg5MzMyMCwicGF0aCI6Ii84MTU4NzM0My8yODQ3NzQ4ODctNWQ1YjdmNzMtZWUwYi00ODlkLWI3MDAtODc1YTM4MGQxYjEyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA2VDIwMDg0MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYzYzRjOWI4MzM1MDQyZTk4NTg5NzM4NzZmYWUxMjhhMTNiNTdiZWFkZDJhZWNiMGU0YzRlNWRkZDI4ZTUyZjEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.oewOUvs5-hTfAv6I2f5Tvn8tofM5ZIkH1Q5hAk7ftu4",
-    title: "myanimelist-streamlit",
-    name: "My Anime List- Python(Streamlit)",
-    text: "A simple project made in python to store in a database anime that are being released, front made in streamlit (python) and back in sqlite3.",
-  }
+  const projects = [
+    {
+      image: "https://i.imgur.com/Ztr3siN.png", //APACHE LOCALHOST OR LINK
+      title: "My top 5 animes",
+      name: "My Top 5 Animes",
+      chip: "HTML",
+      text: "A simple html and css file with my top 5 favourites animes, ",
+      link: "https://github.com/joaovictorlernermartins/my-top-animelist-html"
+    },
+    {
+      image: "https://i.imgur.com/gQcLwvR.png",
+      name: "My Anime Calendar",
+      chip: "Python",
+      text: "We can add animes to our calendar by inserting their name, day of the week when the episode is released, and a link to open the anime page. At the homepage we can filter the animes by the day of the week. If not filtered, everyone will be listed. ",
+      link: "https://github.com/joaovictorlernermartins/my-top-animelist-html"
+    },
   ]
+
 
   if (props.render === true)
     return (
       <Box
         sx={{
           display: "flex",
+          flexDirection: "column",
           alignItems: "top",
           textAlign: "start",
-          bgcolor: "black",
-          borderRadius: 5,
           color: "white",
-          justifyContent: "space-evenly",
-          padding: "20px 40px 20px 30px",
-          marginTop: "10px",
-          gap: "10px",
+          padding: "20px 40px 20px 40px",
+          gap: "40px",
+          justifyContent:"center",
         }}
       >
-        {projects.map(project => (
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              sx={{ height: 140 }}
-              image={project.image}
-              title={project.title}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {project.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {project.text}
-              </Typography>
-            </CardContent>
-            <CardActions sx={{justifyContent: "center", alignContent: "end"}}>
-              <Button size="small">Open GitHub</Button>
-            </CardActions>
-          </Card>
-        ))}
+        <Typography variant="h4"><b>My Projects</b></Typography>
+        <Box sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "30px",
+          justifyContent: "center",
+        }}>
+
+          {projects.map(project => (
+
+            <Card sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              maxWidth: 345,
+              bgcolor: "rgb(31, 31, 31)!important;",
+              color: "white",
+              borderRadius: 2,
+            }}>
+              <Box>
+              <CardMedia
+                sx={{ height: 140 }}
+                image={project.image}
+                title={project.title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {project.name}
+                </Typography>
+                <Chip sx={{ border: "1px solid #6d00b5", color: "#a628fa" }} label={project.chip} size="small" variant="outlined" />
+                <Typography sx={{ marginTop: "5px" }} variant="body2" color="#8787a3 !important;">
+                  {project.text}
+                </Typography>
+              </CardContent>
+              </Box>
+              <CardActions sx={{ justifyContent: "center" }}>
+                <Button target="_blank" href={project.link} size="small">Open GitHub</Button>
+              </CardActions>
+            </Card>
+
+          ))}
+        </Box>
       </Box>
     );
 

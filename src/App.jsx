@@ -11,15 +11,15 @@ export default function App() {
   return (
     <Container component="main">
       <CssBaseline />
-      <Grid container sx={{ marginTop: 12 }} spacing={2} columns={16}>
-        <Grid xs={4}>
+      <Grid container sx={{display:"flex", flexWrap:"wrap", justifyContent: "center", marginTop: 12 }} spacing={2} columns={16}>
+        <Grid sx={{minWidth:"min-content"}} xs={4}>
           <Profile></Profile>
         </Grid>
         <Grid xs={12}>
           <Main></Main>
         </Grid>
       </Grid>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
+      <Copyright sx={{justifyContent: "center", mt: 8, mb: 4 }} />
     </Container>
   );
 }
