@@ -32,7 +32,7 @@ export default function Projects(props) {
 
   if (props.render === true)
     return (
-      <Box
+      <Box className="fadein"
         sx={{
           display: "flex",
           flexDirection: "column",

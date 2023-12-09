@@ -1,24 +1,12 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
+import styles from "./style.module.css";
 
 export default function AboutMe(props) {
   if (props.render === true)
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "top",
-        textAlign: "start",
-        bgcolor: "black",
-        borderRadius: 5,
-        color: "white",
-        padding: "20px 20px 20px 20px",
-        gap: "20px",
-        flexWrap: "wrap",
-        justifyContent: "center",
-      }}
-    >
+    <Box className={`${styles.container} fadein`}>
       <Box sx={{ display: "flex", maxWidth: "450px", flexDirection: "column" }}>
         <Typography variant="h4"><b>About Me</b></Typography>
         <Typography sx={{ marginTop: "8px" }} variant="h6">
